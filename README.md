@@ -74,7 +74,7 @@ Para rodar os scripts deste repositório, você precisará ter o Python instalad
    ```
 
 ## Material Teórico
-Para acessar o material teórico, você pode visitar o [Notion]() do professor Glauber.
+Para acessar o material teórico, você pode visitar o [Notion](https://profglauber.notion.site/Professor-Glauber-Rodrigues-Leite-1603053cc37342bf9c7b4721fd28c834) do professor Glauber.
 
 ## Links Úteis
 

@@ -96,11 +96,13 @@ print("Testando vetor nulo:")
 for i in range(len(v)):
     print(verifica_nulo(v[i]), " => ", v[i])
 
-    # proponha o vetor inverso
 
-
+# proponha o vetor inverso
+# material de apoio: https://www.uel.br/projetos/matessencial/basico/medio/ncomplexos.html#sec06
 def inverso(v):
-    w = np.ones(3, dtype="complex128")  # alterar?
+    w = np.reciprocal(v)
+    # ou: np.conj(v) / np.linalg.norm(v) ** 2
+    # ou 1 / v
 
     return w
 
@@ -127,6 +129,11 @@ def verifica_comutatividade(u, v):
     @return: bool: True se os vetores forem comutativos,
                    False caso contrário.
     """
+
+    # Se a soma de u e v for igual à soma de v e u, então os vetores são comutativos
+    if np.all(soma(u, v) == soma(v, u)):
+        return True
+
     return False
 
 
@@ -153,6 +160,11 @@ def verifica_associatividade(u, v, w):
     @return: bool: True se os vetores seguirem a regra da associação,
                    False caso contrário.
     """
+
+    # Se a soma de u e a soma de v e w for igual à soma de v e u e w, então os vetores são associativos
+    if np.all(soma(u, soma(v, w)) == soma(soma(u, v), w)):
+        return True
+
     return False
 
 
@@ -182,6 +194,11 @@ def verifica_distributividade_1(beta, u, v):
     @return: bool: True se os vetores seguirem a regra da distributividade,
                    False caso contrário.
     """
+
+    # Se o produto de beta e a soma de u e v for igual à soma dos produtos de beta e u e beta e v, então os vetores seguem a regra da distributividade
+    if np.all(produto(beta, soma(u, v)) == soma(produto(beta, u), produto(beta, v))):
+        return True
+
     return False
 
 
@@ -211,6 +228,13 @@ def verifica_distributividade_2(beta, gamma, u):
     @return: bool: True se os vetores seguirem a regra da distributividade,
                    False caso contrário.
     """
+
+    # Se o produto da soma de beta e gamma e u for igual à soma dos produtos de beta e u e gamma e u, então os vetores seguem a regra da distributividade
+    if np.all(
+        produto(soma(beta, gamma), u) == soma(produto(beta, u), produto(gamma, u))
+    ):
+        return True
+
     return False
 
 
@@ -240,6 +264,11 @@ def verifica_distributividade_3(beta, gamma, u):
     @return: bool: True se os vetores seguirem a regra da distributividade,
                    False caso contrário.
     """
+
+    # Se o produto de beta e o produto de gamma e u for igual ao produto de beta e gamma e u, então os vetores seguem a regra da distributividade
+    if np.all(produto(beta, produto(gamma, u)) == produto(produto(beta, gamma), u)):
+        return True
+
     return False
 
 
@@ -267,6 +296,11 @@ def verifica_escalar_unitario(u):
     @return: bool: True se os vetores seguirem a regra da distributividade,
                    False caso contrário.
     """
+
+    # Se o produto de 1 e u for igual a u, então o vetor segue a regra do escalar unitário
+    if np.all(produto(1, u) == u):
+        return True
+
     return False
 
 

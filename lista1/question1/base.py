@@ -85,9 +85,8 @@ print("Testando vetor nulo:")
 for i in range(len(v)):
     print(verifica_nulo(v[i]), " => ", v[i])
 
-    # proponha o vetor inverso
 
-
+# proponha o vetor inverso
 def inverso(v):
     w = np.ones(3, dtype="complex128")  # alterar?
 
