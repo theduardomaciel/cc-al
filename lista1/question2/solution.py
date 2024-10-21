@@ -85,6 +85,7 @@ def combinacao(vetores, vetor_alvo):
     """
 
     # Verifica se os vetores e o vetor alvo têm dimensões compatíveis
+    # Exemplo: Se vetores = [[1, 2], [3, 4]] e vetor_alvo = [5, 6, 7], o sistema não é compatível
     # Não seria necessário, pois a função hstack utilizada e gauss() já faz essa verificação,
     # mas achamos interessante manter :)
 
