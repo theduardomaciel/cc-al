@@ -276,14 +276,14 @@ def verifica_distributividade_2(beta, gamma, u):
 
     # Se o produto da soma de beta e gamma e u for igual à soma dos produtos de beta e u e gamma e u, então os vetores seguem a regra da distributividade
 
-    print("Beta + Gamma:", soma(beta, gamma))
-    print("abs(Beta + Gamma):", np.linalg.norm(soma(beta, gamma)))
-    print("u:", u)
-    print("(beta + gama) * u:", produto(soma(beta, gamma), u))
+    # print("Beta + Gamma:", soma(beta, gamma))
+    # ("abs(Beta + Gamma):", np.linalg.norm(soma(beta, gamma)))
+    # print("u:", u)
+    # print("(beta + gama) * u:", produto(soma(beta, gamma), u))
 
-    print("Beta * u:", produto(beta, u))
-    print("Gamma * u:", produto(gamma, u))
-    print("Beta * u + Gamma * u:", soma(produto(beta, u), produto(gamma, u)))
+    # print("Beta * u:", produto(beta, u))
+    # print("Gamma * u:", produto(gamma, u))
+    # print("Beta * u + Gamma * u:", soma(produto(beta, u), produto(gamma, u)))
 
     return np.allclose(
         produto(soma(beta, gamma), u), soma(produto(beta, u), produto(gamma, u))
